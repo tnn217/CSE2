@@ -52,6 +52,7 @@ public class LoopTheLoop {
                     //Ready to accept input.
                     System.out.println("Enter an int between 1 and 15- ");
                     int nStars = myScanner.nextInt();
+                     
                      int domain = 0;
             
                     while (nStars>domain) {      //Loop is designed to print out nStars. When nStars>0 the loop runs, and it counts down in increments of 1 for every run through of the loop.
