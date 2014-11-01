@@ -67,7 +67,7 @@ public class HW8{
    public static char getInput(Scanner scan, String prompt,String contin){      //this method is practically identical to the first method except for the fact that the method on this one calls for 2 strings rather than just 1 and  is the call for the getInput call on line 97. 
        String character = scan.next();
       int len = character.length();
-      while (len>1){ //this while statement makes sure the character length is 1.
+      while (len>1){ //this while statement makes sure the character length is 
          System.out.println("Did not enter 1 character Try again: ");
          character=scan.next();
          len = character.length();
