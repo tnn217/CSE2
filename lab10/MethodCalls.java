@@ -5,15 +5,15 @@
 //CSE002  Lab10 10/31/14   HAPPY HALLOWEEN!
 import java.util.Scanner;
 public class MethodCalls{
-     public static int addDigit(int a,int b){
-     int output=0;
-     if(a<0 && b>0){
+     public static int addDigit(int a,int b){//establish method for addDigit
+     int output=0; //identify output as an int and set it to 0 initially
+     if(a<0 && b>0){//for case where there is a negative number input, use this if statement
          b=-b;
-         a=-a;
-         output=Integer.parseInt(Integer.toString(b)+Integer.toString(a));
-         return output;
+         a=-a;//reassign the negative concluding integer as a positive and reassign the positive starting integer as a negative
+         output=Integer.parseInt(Integer.toString(b)+Integer.toString(a));//use parseInt method to superimpose 2 integer values together without adding them.
+         return output;//return the output to the initial call.
      }
-     output=Integer.parseInt(Integer.toString(b)+Integer.toString(a));
+     output=Integer.parseInt(Integer.toString(b)+Integer.toString(a));//same parseInt from above but this is for the positive input case
      return output;
          
      }
@@ -23,15 +23,15 @@ public class MethodCalls{
     
      
      
-     public static int join(int c,int d){
+     public static int join(int c,int d){ //join method is very similar to the addDigit method
          int output=0;
-         if(c<0 && d<0){
+         if(c<0 && d<0){ //for the case where both integers are negative, reestablish them as positives and return a positive parsed value
             c=-c;
             d=-d;
             output=Integer.parseInt(Integer.toString(c)+Integer.toString(d));
             return output;
          }    
-         output=Integer.parseInt(Integer.toString(c)+Integer.toString(d));
+         output=Integer.parseInt(Integer.toString(c)+Integer.toString(d));//this join method works for all positive values
          return output;
      }
     
