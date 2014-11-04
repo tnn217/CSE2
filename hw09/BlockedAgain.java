@@ -8,7 +8,7 @@ public class BlockedAgain{
         m = getInt(); //calls the getInt method below- conducts part A of the code.
         allBlocks(m); //calls the allBlocks method- conducts part B of the code.
     }
-    public static int getInt(){ //this is the method call for line 8 above
+    public static int getInt(){   //this is the method call for line 8 above
         Scanner scan;       //Must declare an instance of the Scanner object
         scan=new Scanner(System.in);
         System.out.print("Enter an integer from 1-9 (inclusive): "); //prompt user for input.
