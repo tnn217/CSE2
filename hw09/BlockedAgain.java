@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class BlockedAgain{
     public static void main(String []s){
         int m;
-        //force user to enter int in range 1-9, inclusive.
+        //force user to enter int in range 1-9,inclusive.
         m = getInt(); //calls the getInt method below- conducts part A of the code.
         allBlocks(m);    //calls the allBlocks method- conducts part B of the code.
     }
