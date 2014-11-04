@@ -15,8 +15,8 @@ public class BlockedAgain{
         int n=checkInt(scan);       //this line calls the checkInt method that tests if the input is actually an integer
         int o=checkRange(n,scan);   //this line calls the checkRange method that tests if the integer is within the range of 1 and 9(inclusive)
         //System.out.println("output is"+o);  used this line as a test.
-        return o; //return the output of getInt
-        
+        return o; //return the output of  getInt
+    
     }
     public static int checkInt(Scanner scan){       //this method gets the call to test the integer
         while(!scan.hasNextInt()){          //while statement keeps re-prompting the user to enter an integer, until they finally do.
