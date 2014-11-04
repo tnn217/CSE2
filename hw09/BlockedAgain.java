@@ -61,6 +61,6 @@ public class BlockedAgain{
                 System.out.println("");                 //2 line spaces for formatting purposes.
                 System.out.println("");
             }
-            return number;
+            return number; //returns number
     }
 }
