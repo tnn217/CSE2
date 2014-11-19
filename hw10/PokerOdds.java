@@ -21,6 +21,10 @@ public class PokerOdds{
       for(i=0;i<hand.length;i++){
       Random random=new Random();
       int n=cards[random.nextInt(cards.length)];
+      if(n<0){
+          i--;
+          continue;
+      }
       hand[i]=n;
       hand[i]=cards[n];
       cards[n]=-1;
@@ -97,6 +101,7 @@ public class PokerOdds{
               }
           }
       }
+      System.out.println("");
   }
   
   
@@ -115,6 +120,10 @@ public class PokerOdds{
           for(i=0;i<hand.length;i++){
             Random random=new Random();
             int n=cards[random.nextInt(cards.length)];
+            if(n<0){
+            i--;
+            continue;
+            }
             hand[i]=n;
             hand[i]=cards[n];
             cards[n]=-1;
