@@ -59,7 +59,6 @@ System.out.print("Go again? Enter 'y' or 'Y', anything else to quit- ");
       return false;
   }
   public static boolean exactlyOneDup(int num[]){
-      Arrays.sort(num);
       int length=num.length;
       int count=0;
       for(int i=0;i<length;i++){
