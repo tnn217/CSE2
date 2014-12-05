@@ -6,7 +6,7 @@ public class Enigma1{
     System.out.print("Enter a value for the percent (0, 1,...99)- ");
     myScanner=new Scanner(System.in);
     double x=myScanner.nextDouble();
-    proportion= x/100
+    proportion= x/100;
    System.out.println("You entered "+x);
    //print out the proportion remaining for select percentages
    if((100-x)/100==0.93)  //when the user enters 7

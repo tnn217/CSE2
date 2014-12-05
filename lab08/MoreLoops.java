@@ -1,3 +1,5 @@
+//Tony Nikolov
+//lab 8
 import java.util.Scanner;
 public class MoreLoops{
 	public static void main(String[] arg){
