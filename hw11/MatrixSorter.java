@@ -3,10 +3,10 @@
 public class MatrixSorter{
   public static void main(String arg[]){
     int mat3d[][][];
-    mat3d=buildMat3d();
-    show(mat3d);
+    mat3d=buildMat3d(); //first, I built a 3D array and called this method to fill it.
+    show(mat3d);    ///this method calls to show the array
     System.out.println("The smallest entry in the 3D matrix is "+
-  			findMin(mat3d));
+  			findMin(mat3d));    //finds the minimum value in the entire array.
     System.out.println("After sorting the 3rd matrix we get");
     sort(mat3d[2]);
     show(mat3d);
@@ -14,21 +14,21 @@ public class MatrixSorter{
   public static int[][][] buildMat3d(){
       int mat3d[][][]=new int[3][][];
       for(int i=0;i<mat3d.length;i++){
-          mat3d[i]=new int[2*i+3][];
+          mat3d[i]=new int[2*i+3][];    //the equation for building the length of the rows within the slabs.
           for(int k=0;k<mat3d[i].length;k++){
-              mat3d[i][k]=new int[i+k+1];
+              mat3d[i][k]=new int[i+k+1];   //the equation for building the length of the columns within the rows.
           }
       }
       for(int x=0;x<mat3d.length;x++){
           for(int y=0;y<mat3d[x].length;y++){
               for(int z=0;z<mat3d[x][y].length;z++){
-                  mat3d[x][y][z]=(int)(Math.random()*100)+0;
+                  mat3d[x][y][z]=(int)(Math.random()*100)+0;    //this for loop fills every value of the columns with a random value between 0-100
               }
           }
       }
       return mat3d;
   }
-  public static void show(int [][][] mat3d){
+  public static void show(int [][][] mat3d){    //using the appropriate orientation of for loops, one for each layer of the array, I printed out the slabs with their respective columns and row categorized under them.
       for(int x=0;x<mat3d.length;x++){
           int slab=x+1;
           System.out.println("--------------------------Slab "+slab);
@@ -41,7 +41,7 @@ public class MatrixSorter{
           System.out.println("");
       }
   }
-  public static int findMin(int [][][] mat3d){
+  public static int findMin(int [][][] mat3d){  //this method goes through each individual value of the array and tests to see if it is the smallest value. After every value is checked, the smallest value is printed out.
       int min=mat3d[0][0][0];
       for(int x=0;x<mat3d.length;x++){
           for(int y=0;y<mat3d[x].length;y++){
@@ -75,7 +75,7 @@ public class MatrixSorter{
         }
         return mat2d;
   }
-  public static int[][] sort2(int [][] mat2d){
+  public static int[][] sort2(int [][] mat2d){  //sorting each row by the first value in each column uses the same exact logic as the sort within the columns as shown above, but with minor changes to the bounds of the for loops
             boolean sort=true;  
             while(sort){    
                 sort=false; 

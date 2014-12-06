@@ -2,25 +2,28 @@
 //hw11 PokerSlabs
 import java.util.Scanner;
 public class PokerSlabs{
-    public static void main(String arg[]){
-        int hand[]=new int[5];
+    public static void main(String arg[]){  //the main method is used to establish the arrays used for the various methods.
+        int hand[]=new int[5];  
         int frequency[]=new int[13];
-        getHand(hand, frequency);
-        printhand(hand);
+        int flush[]=new int[4];
+        getHand(hand, frequency, flush);    //calls to get the hand based on user input
+        printhand(hand);    //prints the contents of the hand
+        getresult(frequency, hand, flush);  //prints out the poker result of the hand.
     }
-    public static void getHand(int hand[], int frequency[]){
+    public static void getHand(int hand[], int frequency[], int flush[]){//this method finds frequency of numbers and rank
         int suit=0;
         int rank=0;
         int card=0;
         for(int i=0;i<hand.length;i++){
             suit=getSuit();
             rank=getRank();
-            //frequency[rank]++;
+            frequency[rank]++;
+            flush[suit]++;
             card=suit*13+rank;
             hand[i]=card;
         }
     }
-    public static int getSuit(){
+    public static int getSuit(){    //user is asked to choose what the suit is. If they enter the wrong input, then they are re-prompted.
         Scanner scan=new Scanner(System.in);
         int c=0;
         int d=1;
@@ -52,7 +55,7 @@ public class PokerSlabs{
         
         }
     }
-    public static int getRank(){
+    public static int getRank(){    //user is asked to enter one of the 13 ranks. For ace, jack, queen, and king: I use a different for statement
         Scanner scan=new Scanner(System.in);
         int a=0;
         int k=1;
@@ -98,7 +101,7 @@ public class PokerSlabs{
         
         }
     }
-    public static void printhand(int hand[]){
+    public static void printhand(int hand[]){   //this method takes the already completed hand and prints it. The hand is described by numbers for suit(0-3)and rank(0-12)
     	String suit[]={"Clubs:	", "Diamonds: ", "Hearts:   ",  "Spades:   "};
     	String face[]={
            "K ","A ","2 ","3 ","4 ","5 ","6 ","7 ",
@@ -116,6 +119,28 @@ public class PokerSlabs{
       	}
     	}
     	System.out.println(out);
+  }
+  public static void getresult(int frequency[], int hand[], int flush[]){// this method interprets the hand based on the added up frequency and flush arrays.
+      for(int i=0;i<flush.length;i++){
+          if(flush[i]==5){
+              System.out.println("This is a flush");
+              break;
+          }
+      }
+      for(int k=0;k<frequency.length;k++){
+          if(frequency[k]==4){
+              System.out.println("This is a four of a kind");
+              break;
+          }
+          else if(frequency[k]==3){
+              System.out.println("This is a three of a kind");
+              break;
+          }
+          if(frequency[k]==2){
+              System.out.println("This is a two of a kind");
+              break;
+          }
+      }
   }
 
 
